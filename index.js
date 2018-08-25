@@ -45,7 +45,7 @@ function nextPage (){
     if (pageNum < 10){
         console.log('here');
         pageNum++;
-        window.location.replace("./?pageNum=" + pageNum);
+        window.location.replace("./?pageNum=" + pageNum + '&searchTerm=' + object.searchTerm );
     }
 }
 function prevPage (){
@@ -60,21 +60,44 @@ let params = {
     part: 'snippet',
     key: APIKey,
     maxResults: 10,
-    // q: "music",
-    order: "rating"
+    order: "rating",
+    topicId:"/m/04rlf"
 }
 
 
 function loadVids(val) {
+    console.log('fired');
     let search = object.searchTerm;
         params.q = search;
 
         $.getJSON(googleURL, params, function (data) {
+            let n = 10;
+            console.log(data.items);
+            data.items = shuffle(data.items);
             console.log(data);
             let index = pageNum - 1;
-            console.log(embedHTML1 + data.items[index].id.channelId + embedHTML2);
+            console.log(embedHTML1 + data.items[index].id.videoId + embedHTML2);
             $("#video").append(embedHTML1 + data.items[index].id.videoId + embedHTML2);
         });
+}
+function shuffle(array) {
+    let counter = array.length;
+
+    // While there are elements in the array
+    while (counter > 0) {
+        // Pick a random index
+        let index = Math.floor(Math.random() * counter);
+
+        // Decrease counter by 1
+        counter--;
+
+        // And swap the last element with it
+        let temp = array[counter];
+        array[counter] = array[index];
+        array[index] = temp;
+    }
+
+    return array;
 }
 
 function submitSearch () {

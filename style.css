@@ -16,11 +16,11 @@ p{
     width:50px;
     height:50px;
     display:inline-block;
-    padding-top:50px;
+    padding-top:100px;
     padding-left:70px;
 }
 .navButtons{
-    margin:0 auto 0 auto;
+    text-align:center;
 }
 .content{
     width:100%;
@@ -37,7 +37,7 @@ background-color:red;
 .logo{
     width:100px;
     height:100px;
-    margin-left:25px;
+    margin-left:12px;
 
 }
 
