@@ -1,7 +1,8 @@
 html,body{
     width:100%;
     margin:0 auto;
-    
+    background-color:#f2f2f2;
+    font-family: 'Oswald', sans-serif;
 }
 h1{
     color:white;
@@ -12,16 +13,17 @@ p{
     color:black;
 }
 .button{
-    width:20%;
-    height:100px;
+    width:50px;
+    height:50px;
     display:inline-block;
     padding-top:50px;
     margin-left:100px;
+    
 }
 .navButtons{
     width:100%;
     height:10vh;
-    margin:0 auto;
+    margin:0 auto 0 auto;
     
 }
 .content{
@@ -48,4 +50,19 @@ background-color:red;
 }
 a{
     margin-top:10px;
+}
+label{
+    margin-left:60px;
+    color:#ffffff;
+}
+input{
+    text-align:center;
+    display:block;
+    margin:0 auto 0 auto;
+}
+#searchbutton{
+    width:50px;
+    display:block;
+    margin:0 auto 0 auto;
+    margin-top:5px;
 }

@@ -3,6 +3,8 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css?family=Oswald:400,500" rel="stylesheet">
+
 <style>
 body {
     font-family: "Lato", sans-serif;
@@ -15,7 +17,7 @@ body {
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #f1f1f1;
+    background-color: #333333;
     overflow-x: hidden;
     padding-top: 20px;
 }
@@ -24,8 +26,8 @@ body {
     padding: 6px 8px 6px 16px;
     text-decoration: none;
     font-size: 25px;
-    color: #666666;
-
+    color: #ffffff;
+    
     display: block;
 }
 
@@ -42,6 +44,7 @@ body {
     margin-left: 160px; /* Same as the width of the sidenav */
     font-size: 28px; /* Increased text to enable scrolling */
     padding: 0px 10px;
+    background-color:#f2f2f2;
 }
 iframe{
     display:block;
@@ -61,7 +64,16 @@ iframe{
 
 <div class="sidenav">
     
-  <img src="tRex.png" class = "logo">
+  <img src="trex.png" class = "logo">
+  <form>
+        <div>
+            <label for="Search">Search</label>
+            <input type="text" id="searchForm" placeholder="search for a song!">
+        </div>
+        <!--        <input type="text" id="searchForm" placeholder="search for a song!" /> -->
+        <!--         <input type="button" value="Search" onclick="submitSearch();" /> -->
+        <button id="searchbutton" type="button"">Search</button>
+    </form>
 <div class = "sideButtons">
         <a id="Rock">Rock</a>
         <a id="Hip Hop">Hip Hop</a>
@@ -74,9 +86,12 @@ iframe{
     
     <div id = "video"></div>
     <div id = "nav" class = "navButtons">
-        <div id="prev" class = "button"><p><</p></div>
+<div class = "navigation">
+        <img src = "button_play_ backwards.jpg" id="prev" class = "button">
         <div id="current" class = "button"><p id = "num"></p></div>
-        <div id="next" class = "button"><p>></p></div>
+        <img src = "button_play_ forwards-1.jpg" id="next" class = "button">
+</div>
+
     </div>
  
 </div>

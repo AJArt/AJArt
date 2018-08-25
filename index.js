@@ -17,7 +17,7 @@ country.addEventListener('click', function(){
     buttonClicked('country');
 }, false);
 
-function buttonClicked(val){
+function  buttonClicked(val){
     window.location.replace("./?pageNum=1&searchTerm=" + val);
 
 
@@ -28,12 +28,12 @@ let APIKey = "AIzaSyC6YNBp5YTz9_VxpwWk3bfhpIaISC05Yq4";
 let googleURL = "https://www.googleapis.com/youtube/v3/search";
 var embedDiv1 = '<div class="player"><h1>';
 var embedDiv2 = '<h2>';
-let embedHTML1 = '<iframe width="640" height="400" src="https://www.youtube.com/embed/';
+let embedHTML1 = '<iframe class = "videoFrame" width="640" height="400" src="https://www.youtube.com/embed/';
 let embedHTML2 = '" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
 
 function pageLoad() {
     object = getURLParam(window.location.href);
-    console.log(object);
+    console.log(object.searchTerm);
     pageNum = object.pageNum;
     h1.innerHTML = object.pageNum;
     loadVids();
@@ -77,6 +77,18 @@ function loadVids(val) {
         });
 }
 
+function submitSearch () {
+    console.log("submit search");
+
+    var input = $('#searchForm').val();
+
+     buttonClicked(input);
+}
+
+// event listener
+$("#searchbutton").click(submitSearch);
+
+
 
 function getURLParam(url){
     let object = {};
@@ -86,7 +98,16 @@ function getURLParam(url){
         let arr1 = arr[1].split('&');
         for (let i = 0; i < arr1.length; i++){
             let arr2 = arr1[i].split("=");
-            object[arr2[0]] = arr2[1];
+            let char;
+            if (arr2[1].includes('%20')){
+                let newArr = arr2[1].split('%20');
+                char = newArr.join(' ');
+                object[arr2[0]] = char;
+            }
+            else{
+                object[arr2[0]] = arr2[1];
+            }
+            
         }
         
         return object;
