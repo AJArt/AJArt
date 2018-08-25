@@ -7,6 +7,7 @@ let hiphop = document.getElementById("Hip Hop");
 let country = document.getElementById("Country");
 
 let object;
+let dataObject
 rock.addEventListener('click', function(){
     buttonClicked('rock');
 }, false);
@@ -43,16 +44,30 @@ window.onload = pageLoad;
 function nextPage (){
     console.log(pageNum);
     if (pageNum < 10){
-        console.log('here');
+        object.pageNum = object.pageNum++;
+        
+        
+        //document.getElementById('video').innerHTML = "";
+        //$("#video").append(embedHTML1 + dataObject[pageNum].id.videoId + embedHTML2);
+        let str = 'https://www.youtube.com/embed/' + dataObject[pageNum].id.videoId;
+        document.getElementsByTagName('iframe').setAttribute("src", str);
         pageNum++;
-        window.location.replace("./?pageNum=" + pageNum + '&searchTerm=' + object.searchTerm );
+        h1.innerHTML = pageNum;
+        
+        console.log('here');
+        
+        // window.location.replace("./?pageNum=" + pageNum + '&searchTerm=' + object.searchTerm );
     }
 }
 function prevPage (){
     console.log(pageNum);
     if (pageNum > 1){
+        object.pageNum = object.pageNum--;
+        
+
+        $("#video").append(embedHTML1 + dataObject[pageNum].id.videoId + embedHTML2);
         pageNum--;
-        window.location.replace("./?pageNum=" + pageNum);
+        h1.innerHTML = pageNum;
     }
 
 }
@@ -73,11 +88,12 @@ function loadVids(val) {
         $.getJSON(googleURL, params, function (data) {
             let n = 10;
             console.log(data.items);
-            data.items = shuffle(data.items);
+            dataObject = shuffle(data.items);
             console.log(data);
             let index = pageNum - 1;
             console.log(embedHTML1 + data.items[index].id.videoId + embedHTML2);
             $("#video").append(embedHTML1 + data.items[index].id.videoId + embedHTML2);
+
         });
 }
 function shuffle(array) {
