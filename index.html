@@ -1,23 +1,86 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <div class = "content">
-            <div id = "video"></div>
-            <div id = "nav" class = "navButtons">
-                <div id="prev" class = "button"><h1>Prev</h1></div>
-                <div id="current" class = "button"><h1 id = "num"></h1></div>
-                <div id="next" class = "button"><h1>Next</h1></div>
-            </div>
-        </div>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<style>
+body {
+    font-family: "Lato", sans-serif;
+}
 
+.sidenav {
+    height: 100%;
+    width: 160px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #f1f1f1;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
 
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #666666;
 
-        <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-        <script src="index.js"></script>
-        <script src="musictop10.js"></script>
-    </body>
+    display: block;
+}
+
+.sidenav a:hover {
+    color: #181616;
+}
+.sidenav a:active {
+  color: red;
+}
+.sidenav a:target {
+  color: rgb(85, 160, 147);
+}
+.main {
+    margin-left: 160px; /* Same as the width of the sidenav */
+    font-size: 28px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+}
+iframe{
+    display:block;
+    margin:0 auto 0 auto;
+    margin-top:50px;
+}
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+/*.rock{
+    color: #f1f1f1;
+}  */
+</style>
+</head>
+<body>
+
+<div class="sidenav">
     
-</html>
+  <img src="tRex.png" class = "logo">
+<div class = "sideButtons">
+        <a id="Rock">Rock</a>
+        <a id="Hip Hop">Hip Hop</a>
+        <a id="Country">Country</a>
+</div>
+
+</div>
+
+<div class="main">
+    
+    <div id = "video"></div>
+    <div id = "nav" class = "navButtons">
+        <div id="prev" class = "button"><p><</p></div>
+        <div id="current" class = "button"><p id = "num"></p></div>
+        <div id="next" class = "button"><p>></p></div>
+    </div>
+ 
+</div>
+<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+     <script src= "index.js"></script>
+</body>
+</html> 
