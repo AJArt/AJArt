@@ -1,0 +1,34 @@
+html,body{
+    width:100%;
+    margin:0 auto;
+    
+}
+h1{
+    color:white;
+    text-align:center;
+}
+
+.button{
+    width:20%;
+    height:100px;
+    background-color:grey;
+    display:inline-block;
+    margin:0 auto;
+}
+.navButtons{
+    width:100%;
+    height:20vh;
+    background-color:black;
+    
+}
+.content{
+    width:100%;
+    height:100vh;
+    background-color:#f2f2f2;
+    
+}
+.theContent{
+    width:100%;
+height:80vh;
+background-color:red;
+}
