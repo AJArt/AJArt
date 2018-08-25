@@ -25,14 +25,14 @@ function nextPage (){
     console.log(pageNum);
     if (pageNum != 10){
         pageNum++;
-        window.location.replace("http://127.0.0.1:5500/?pageNum=" + pageNum);
+        window.location.replace("http://127.0.0.1:5500/AJArt/?pageNum=" + pageNum);
     }
 }
 function prevPage (){
     console.log(pageNum);
     if (pageNum != 1){
         pageNum--;
-        window.location.replace("http://127.0.0.1:5500/?pageNum=" + pageNum);
+        window.location.replace("http://127.0.0.1:5500/AJArt/?pageNum=" + pageNum);
     }
 
 }
